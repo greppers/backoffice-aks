@@ -1,83 +1,27 @@
-# Network
+# PiProject
 
-Create the network:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
 
-```
-docker network create greppers-network
-```
+## Development server
 
-# Dockerfiles
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## MySQL
+## Code scaffolding
 
-Build the image:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-```
-docker build --network=greppers-network -t greppers/holus-db:latest -f Dockerfile.db .
-```
+## Build
 
-Start the container:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-```
-docker run --name=greppers-db --network=greppers-network -d greppers/holus-db:latest
-```
+## Running unit tests
 
-## Spring
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Change your directory:
+## Running end-to-end tests
 
-```
-cd Backend/Backend
-```
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Build the image:
+## Further help
 
-```
-docker build --network=greppers-network -t greppers/holus-spring:latest -f Dockerfile .
-```
-
-Start the container:
-
-```
-docker run --name=greppers-api --network=greppers-network -d greppers/holus-spring:latest
-```
-
-## Front-office
-
-Change your directory:
-
-```
-cd Frontend/Client
-```
-
-Build the image:
-
-```
-docker build --network=greppers-network -t greppers/holus-frontoffice:latest -f Dockerfile .
-```
-
-Start the container:
-
-```
-docker run --name=greppers-frontoffice --network=greppers-network -d greppers/holus-frontoffice:latest
-```
-
-## Back-office
-
-Change your directory:
-
-```
-cd Frontend/Admin
-```
-
-Build the image:
-
-```
-docker build --network=greppers-network -t greppers/holus-backoffice:latest -f Dockerfile .
-```
-
-Start the container:
-
-```
-docker run --name=greppers-backoffice --network=greppers-network -d greppers/holus-backoffice:latest
-```
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
